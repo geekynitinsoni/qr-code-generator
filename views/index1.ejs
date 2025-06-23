@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QR CODE Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+    }
+    form div {
+      margin-bottom: 15px;
+    }
+    input[type="text"] {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: royalblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: dodgerblue;
+    }
+    .text-center {
+      text-align: center;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+    }
+    a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: royalblue;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>QR Code Generator</h2>
+
+    <% if(QR_code){ %>
+      <h3 class="text-center">Scan this from your scanner</h3>
+      <div class="text-center">
+        <img src="<%= QR_code %>" alt="QR Code">
+        <br>
+        <a href="/download?file_path=<%= img_src %>">Download QR Code</a>
+      </div>
+    <% } else { %>
+      <form action="/" method="POST">
+        <div>
+          <label for="url">Enter URL:</label>
+          <br>
+          <input type="text" id="url" name="url" required placeholder="https://example.com">
+        </div>
+        <div>
+          <button type="submit">Generate QR Code</button>
+        </div>
+      </form>
+    <% } %>
+
+  </div>
+</body>
+</html>
