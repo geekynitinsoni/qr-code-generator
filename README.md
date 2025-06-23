@@ -1,7 +1,17 @@
-# Node-JS-Simple-QR-Code-Generator-and-Download
+# QR Code Generator (Node.js + EJS)
 
-npm package used : https://www.npmjs.com/package/qrcode
+A web application to generate QR codes from URLs. Built using Node.js, Express.js, and EJS.
 
-In this project user can generate the QR code and download the file.
-# Test browser image
-![img test](https://github.com/kcsrinivasa/Node-JS-Simple-QR-Code-Generator-and-Download/blob/main/store/Screen%20Shot%202020-12-25%20at%205.00.52%20PM.png)
+## Features
+- Generate QR code by entering any URL
+- Download the generated QR code as PNG
+- Fast and simple UI
+
+## How to Run
+1. Clone the repo
+2. Run `npm install`
+3. Run `node index.js`
+4. Visit `http://localhost:5000`
+
+## Tech Stack
+Node.js, Express, EJS, HTML, CSS, QRCode (npm)
